@@ -9,10 +9,11 @@ public class Worker {
 
     public void start(int errorTask) {
         for (int i = 0; i < 100; i++) {
-        if (i == errorTask) {
-            errorCallback.onError("Task " + errorTask + " not completed");
-        }
-            callback.onDone("Task " + i + " is done");
+            if (i == errorTask) {
+                errorCallback.onError("Task " + errorTask + " not completed");
+            } else {
+                callback.onDone("Task " + i + " is done");
+            }
         }
     }
 }
